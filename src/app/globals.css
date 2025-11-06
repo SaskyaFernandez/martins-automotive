@@ -1,0 +1,33 @@
+/* src/app/globals.css — Tailwind v4 */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import "tailwindcss"; /* v4: un seul import */
+
+/* Base */
+html, body {
+  background: #fff;
+  color: rgb(17 24 39); /* text-gray-900 */
+  font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+  margin: 0;
+}
+
+/* Titres (les tailles se font dans le JSX via classes Tailwind) */
+h1, h2, h3, h4, h5, h6 { font-weight: 700; }
+
+/* Bouton réutilisable */
+.btn-primary {
+  @apply bg-yellow-500 text-black px-6 py-3 rounded-lg font-semibold shadow-md transition;
+}
+.btn-primary:hover { @apply bg-yellow-400; }
+
+/* Espacement de section par défaut (optionnel) */
+section { @apply py-16 px-6 md:px-20; }
+
+/* Formulaires */
+input, textarea, select {
+  @apply w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-500;
+}
+
+/* Footer basique */
+footer { @apply bg-white text-black text-center py-6; }
