@@ -1,7 +1,8 @@
-import { 
-  CreateAppointmentRequest, 
+import {
+  CreateAppointmentRequest,
   CreateAppointmentResponse,
-  AvailabilityResponse 
+  AvailabilityResponse,
+  CustomerInfo
 } from '@/types/appointment';
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || '/api';
@@ -80,7 +81,7 @@ export function convertToApiFormat(appointmentData: {
   service: string;
   date: string;
   time: string;
-  customerInfo: any;
+  customerInfo: CustomerInfo;
 }): CreateAppointmentRequest {
   // Combine date and time into ISO datetime string
   const dateTime = new Date(`${appointmentData.date}T${appointmentData.time}:00`).toISOString();

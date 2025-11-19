@@ -88,19 +88,19 @@ export default function CustomerForm({
 
   return (
     <div>
-      <div className="flex items-center justify-between mb-8">
-        <button onClick={onBack} className="text-gray-600 hover:text-black">
+      <div className="flex items-center justify-between mb-6 sm:mb-8">
+        <button onClick={onBack} className="text-gray-600 hover:text-black text-sm sm:text-base">
           ← Retour
         </button>
-        <h2 className="text-2xl font-bold">Vos informations</h2>
-        <div></div>
+        <h2 className="text-lg sm:text-xl md:text-2xl font-bold">Vos informations</h2>
+        <div className="w-16"></div>
       </div>
 
       <div className="max-w-2xl mx-auto">
         {/* Appointment Summary */}
-        <div className="bg-gray-50 p-6 rounded-lg mb-8">
-          <h3 className="font-semibold mb-4">Récapitulatif de votre rendez-vous</h3>
-          <div className="space-y-2 text-sm">
+        <div className="bg-gray-50 p-4 sm:p-6 rounded-lg mb-6 sm:mb-8">
+          <h3 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Récapitulatif de votre rendez-vous</h3>
+          <div className="space-y-2 text-xs sm:text-sm">
             <div><strong>Service :</strong> {appointmentSummary.service}</div>
             <div><strong>Date :</strong> {formatDate(appointmentSummary.date)}</div>
             <div><strong>Heure :</strong> {appointmentSummary.time}</div>
@@ -108,80 +108,80 @@ export default function CustomerForm({
         </div>
 
         {/* Customer Form */}
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             <div>
-              <label className="block text-sm font-medium mb-2">Prénom *</label>
+              <label className="block text-xs sm:text-sm font-medium mb-2">Prénom *</label>
               <input
                 type="text"
                 value={formData.firstName}
                 onChange={(e) => handleChange('firstName', e.target.value)}
-                className={`w-full p-3 rounded-lg border ${
+                className={`w-full p-2.5 sm:p-3 rounded-lg border text-sm sm:text-base ${
                   errors.firstName ? 'border-red-500' : 'border-gray-300'
                 } focus:outline-none focus:ring-2 focus:ring-yellow-500`}
                 placeholder="Votre prénom"
               />
               {errors.firstName && (
-                <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>
+                <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.firstName}</p>
               )}
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">Nom *</label>
+              <label className="block text-xs sm:text-sm font-medium mb-2">Nom *</label>
               <input
                 type="text"
                 value={formData.lastName}
                 onChange={(e) => handleChange('lastName', e.target.value)}
-                className={`w-full p-3 rounded-lg border ${
+                className={`w-full p-2.5 sm:p-3 rounded-lg border text-sm sm:text-base ${
                   errors.lastName ? 'border-red-500' : 'border-gray-300'
                 } focus:outline-none focus:ring-2 focus:ring-yellow-500`}
                 placeholder="Votre nom"
               />
               {errors.lastName && (
-                <p className="text-red-500 text-sm mt-1">{errors.lastName}</p>
+                <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.lastName}</p>
               )}
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             <div>
-              <label className="block text-sm font-medium mb-2">Email *</label>
+              <label className="block text-xs sm:text-sm font-medium mb-2">Email *</label>
               <input
                 type="email"
                 value={formData.email}
                 onChange={(e) => handleChange('email', e.target.value)}
-                className={`w-full p-3 rounded-lg border ${
+                className={`w-full p-2.5 sm:p-3 rounded-lg border text-sm sm:text-base ${
                   errors.email ? 'border-red-500' : 'border-gray-300'
                 } focus:outline-none focus:ring-2 focus:ring-yellow-500`}
                 placeholder="votre.email@exemple.com"
               />
               {errors.email && (
-                <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.email}</p>
               )}
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">Téléphone *</label>
+              <label className="block text-xs sm:text-sm font-medium mb-2">Téléphone *</label>
               <input
                 type="tel"
                 value={formData.phone}
                 onChange={(e) => handleChange('phone', e.target.value)}
-                className={`w-full p-3 rounded-lg border ${
+                className={`w-full p-2.5 sm:p-3 rounded-lg border text-sm sm:text-base ${
                   errors.phone ? 'border-red-500' : 'border-gray-300'
                 } focus:outline-none focus:ring-2 focus:ring-yellow-500`}
                 placeholder="0X XX XX XX XX"
               />
               {errors.phone && (
-                <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+                <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.phone}</p>
               )}
             </div>
           </div>
 
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <label className="text-sm font-medium">Numéro de châssis (VIN) *</label>
+              <label className="text-xs sm:text-sm font-medium">Numéro de châssis (VIN) *</label>
               <InfoIcon title="Numéro de châssis">
-                <div className="text-sm">
+                <div className="text-xs sm:text-sm">
                   Sur la carte grise (case E) ou tableau de bord.
                 </div>
               </InfoIcon>
@@ -190,41 +190,41 @@ export default function CustomerForm({
               type="text"
               value={formData.chassisNumber}
               onChange={(e) => handleChange('chassisNumber', e.target.value)}
-              className={`w-full p-3 rounded-lg border ${
+              className={`w-full p-2.5 sm:p-3 rounded-lg border text-sm sm:text-base ${
                 errors.chassisNumber ? 'border-red-500' : 'border-gray-300'
               } focus:outline-none focus:ring-2 focus:ring-yellow-500`}
               placeholder="Ex: 1HGBH41JXMN109186"
             />
             {errors.chassisNumber && (
-              <p className="text-red-500 text-sm mt-1">{errors.chassisNumber}</p>
+              <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.chassisNumber}</p>
             )}
-            <p className="text-sm text-gray-500 mt-1">
+            <p className="text-xs sm:text-sm text-gray-500 mt-1">
               17 caractères - Cliquez sur le &quot;i&quot; pour voir où le trouver
             </p>
           </div>
 
           <div>
-            <label className="block text-sm font-medium mb-2">
+            <label className="block text-xs sm:text-sm font-medium mb-2">
               Description du service ou réparation nécessaire *
             </label>
             <textarea
               value={formData.description}
               onChange={(e) => handleChange('description', e.target.value)}
               rows={4}
-              className={`w-full p-3 rounded-lg border ${
+              className={`w-full p-2.5 sm:p-3 rounded-lg border text-sm sm:text-base ${
                 errors.description ? 'border-red-500' : 'border-gray-300'
               } focus:outline-none focus:ring-2 focus:ring-yellow-500 resize-vertical`}
               placeholder="Décrivez le problème rencontré ou le service souhaité..."
             />
             {errors.description && (
-              <p className="text-red-500 text-sm mt-1">{errors.description}</p>
+              <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.description}</p>
             )}
           </div>
 
-          <div className="flex justify-center pt-6">
+          <div className="flex justify-center pt-4 sm:pt-6">
             <button
               type="submit"
-              className="btn-primary text-lg px-8 py-4"
+              className="btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto"
             >
               Confirmer le rendez-vous
             </button>

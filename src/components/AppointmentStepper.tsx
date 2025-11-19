@@ -13,15 +13,15 @@ const STEPS = [
 
 export default function AppointmentStepper({ currentStep }: AppointmentStepperProps) {
   return (
-    <div className="flex items-center justify-center">
-      <div className="flex items-center space-x-4 md:space-x-8">
+    <div className="flex items-center justify-center overflow-x-auto px-2">
+      <div className="flex items-center space-x-2 sm:space-x-4 md:space-x-8">
         {STEPS.map((step, index) => (
           <div key={step.number} className="flex items-center">
             {/* Step Circle */}
             <div className="flex flex-col items-center">
               <div
                 className={`
-                  w-10 h-10 rounded-full flex items-center justify-center font-semibold text-sm transition
+                  w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-semibold text-xs sm:text-sm transition
                   ${step.number <= currentStep
                     ? 'bg-yellow-500 text-black'
                     : 'bg-gray-200 text-gray-500'
@@ -34,12 +34,12 @@ export default function AppointmentStepper({ currentStep }: AppointmentStepperPr
                   <span>{step.number}</span>
                 )}
               </div>
-              
+
               {/* Step Title */}
-              <div className="mt-2 text-center">
+              <div className="mt-1 sm:mt-2 text-center">
                 <div
                   className={`
-                    text-sm font-medium
+                    text-xs sm:text-sm font-medium whitespace-nowrap
                     ${step.number <= currentStep ? 'text-black' : 'text-gray-500'}
                   `}
                 >
@@ -60,7 +60,7 @@ export default function AppointmentStepper({ currentStep }: AppointmentStepperPr
             {index < STEPS.length - 1 && (
               <div
                 className={`
-                  w-12 md:w-20 h-0.5 mx-4 transition
+                  w-6 sm:w-12 md:w-20 h-0.5 mx-2 sm:mx-4 transition
                   ${step.number < currentStep ? 'bg-yellow-500' : 'bg-gray-200'}
                 `}
               />

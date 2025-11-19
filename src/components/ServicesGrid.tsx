@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 const SERVICES = [
-  "Entretien",
+  "Entretiens",
   "Diagnostic",
   "Contrôle technique",
   "Pneus",
@@ -14,7 +14,7 @@ const SERVICES = [
   "Climatisation",
 ];
 
-const EXTS = [".webp", ".jpg", ".jpeg", ".png", ".svg"];
+const EXTS = [ ".png",".webp", ".jpg", ".jpeg", ".svg"];
 const toSlug = (s: string) => s.toLowerCase().replace(/\s+/g, "_");
 
 function ServiceCard({ name }: { name: string }) {
@@ -52,19 +52,19 @@ export default function ServicesGrid() {
   const visibleServices = showAll ? SERVICES : SERVICES.slice(0, 6);
 
   return (
-    <section id="services" className=" py-50 px-6 md:px-20">
+    <section id="services" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-20">
       {/* Titre section */}
-      <div className="text-center mb-12">
-        <p className="text-gray-500 uppercase tracking-widest text-sm">
+      <div className="text-center mb-8 sm:mb-10 md:mb-12">
+        <p className="text-gray-500 uppercase tracking-widest text-xs sm:text-sm mb-2">
           Que faisons-nous ?
         </p>
-        <h2 className="text-3xl font-extrabold tracking-wide text-gray-900">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wide text-gray-900">
           Nos services
         </h2>
       </div>
 
       {/* Grille */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-10">
         {visibleServices.map((s) => (
           <ServiceCard key={s} name={s} />
         ))}
@@ -72,10 +72,10 @@ export default function ServicesGrid() {
 
       {/* Bouton "voir plus" */}
       {!showAll && (
-        <div className="text-center mt-10">
+        <div className="text-center mt-8 sm:mt-10">
           <button
             onClick={() => setShowAll(true)}
-            className="uppercase text-sm font-semibold tracking-wide underline hover:text-yellow-600 transition"
+            className="uppercase text-xs sm:text-sm font-semibold tracking-wide underline hover:text-yellow-600 transition"
           >
             Afficher tous les services
           </button>
