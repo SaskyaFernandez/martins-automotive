@@ -18,6 +18,7 @@ const eslintConfig = [
       "out/**",
       "build/**",
       "next-env.d.ts",
+      "src/utils/index.js", // Backend server file, not part of frontend build
     ],
   },
 ];

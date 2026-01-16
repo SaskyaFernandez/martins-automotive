@@ -24,6 +24,7 @@ export interface AppointmentSummary {
 export interface CreateAppointmentRequest {
   service: string;
   dateTime: string; // ISO datetime string
+  locale?: string; // Customer's language preference (fr/nl)
   customer: {
     firstName: string;
     lastName: string;

@@ -6,13 +6,17 @@ export const metadata: Metadata = {
   description: "Entretien, diagnostic et réparations auto à Huizingen. Prenez rendez-vous en ligne.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params
 }: {
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
+
   return (
-    <html lang="fr">
+    <html lang={locale || 'fr'}>
       <body className="font-sans bg-white text-gray-900">
         {children}
       </body>
