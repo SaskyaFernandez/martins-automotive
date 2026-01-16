@@ -1,0 +1,218 @@
+{
+  "nav": {
+    "about": "À propos",
+    "services": "Nos Services",
+    "contact": "Contact",
+    "appointment": "Prendre Rendez-vous"
+  },
+  "home": {
+    "hero": {
+      "title": "Sur la route, on veille sur vous et votre voiture",
+      "subtitle": "Entretien, réparation et diagnostic automobile professionnel",
+      "cta": "Prendre Rendez-vous"
+    },
+    "info": {
+      "experience": "25+ ans d'expérience",
+      "satisfaction": "100% satisfaction client",
+      "services": "Services complets"
+    },
+    "infoStrip": {
+      "call": {
+        "title": "APPELEZ-NOUS AU 0473 64 79 47",
+        "subtitle": "N'hésitez pas à nous contacter"
+      },
+      "appointment": {
+        "title": "OBTENIR UN RENDEZ-VOUS",
+        "subtitle": "Un entretien? Une réparation? Un témoin allumé?"
+      },
+      "location": {
+        "title": "TROUVEZ-NOUS SUR LA CARTE",
+        "address": "Albert Vaucampslaan 28, 1654 Huizingen"
+      }
+    },
+    "about": {
+      "title": "À propos",
+      "subtitle": "Qui sommes nous ?",
+      "text": "Chez Martins Automotive, chaque véhicule mérite une attention rigoureuse. Notre équipe qualifiée s'engage à vous offrir un service fiable, rapide et professionnel."
+    },
+    "servicesTitle": "Nos services",
+    "servicesSubtitle": "Que faisons-nous ?",
+    "showAllServices": "Afficher tous les services"
+  },
+    "services": {
+      "mon_entretien": "Entretien",
+      "mon_entretien_eco_controle": "Entretien + Éco-Contrôle",
+  
+      "adblue": "AdBlue",
+      "liquide_frein": "Liquide de frein",
+      "liquide_refroidissement": "Liquide de refroidissement",
+  
+      "freinage": "Freinage",
+      "amortisseur_suspension": "Amortisseur / suspension",
+      "transmission_embrayage": "Transmission / embrayage",
+      "echappement": "Échappement",
+      "demarrage_batterie": "Démarrage / batterie",
+      "eclairage_ampoules": "Éclairage / ampoules",
+  
+      "diagnostic_eco_controle": "Diagnostic Éco-Contrôle",
+      "diagnostic_freinage": "Diagnostic freinage",
+      "diagnostic_demarrage_charge": "Diagnostic démarrage et charge",
+      "diagnostic_train_roulant": "Diagnostic train roulant",
+      "diagnostics_electroniques": "Diagnostics électroniques",
+  
+      "check_up_controle_technique": "Check Up contrôle technique",
+      "check_up_hiver": "Check Up hiver",
+      "check_up_printemps_ete": "Check Up printemps / été",
+      "check_up_pret_partir": "Check Up prêt à partir",
+  
+      "vitrage": "Vitrage",
+      "entretien_reparation_2_roues": "Entretien et réparation 2 roues"
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Une question ? Besoin d'un renseignement ? N'hésitez pas à nous contacter, nous vous répondrons dans les plus brefs délais.",
+    "headline": "Vous avez un problème ? On est là pour le régler.",
+    "address": "Adresse",
+    "phone": "Téléphone",
+    "hours": "Horaires d'ouverture",
+    "hoursDetail": {
+      "weekdays": "Lundi - Vendredi",
+      "weekdaysTime": "8h00 - 18h00",
+      "saturday": "Samedi",
+      "saturdayTime": "9h00 - 13h00",
+      "sunday": "Dimanche",
+      "sundayTime": "Fermé"
+    },
+    "findUs": "Nous trouver",
+    "parkingAvailable": "Parking gratuit disponible",
+    "form": {
+      "title": "Contactez-nous",
+      "name": "Nom",
+      "email": "Email",
+      "phone": "Téléphone",
+      "message": "Message",
+      "send": "Envoyer",
+      "sending": "Envoi en cours...",
+      "required": "Champs obligatoires",
+      "success": "Message envoyé avec succès! Nous vous répondrons rapidement.",
+      "error": "Erreur lors de l'envoi",
+      "errorConnection": "Erreur de connexion. Veuillez réessayer.",
+      "errors": {
+        "nameRequired": "Le nom est requis",
+        "emailRequired": "L'email est requis",
+        "emailInvalid": "Email invalide",
+        "messageRequired": "Le message est requis"
+      }
+    }
+  },
+  "appointment": {
+    "title": "Prendre Rendez-vous",
+    "steps": {
+      "service": "Service",
+      "date": "Date",
+      "time": "Heure",
+      "info": "Informations"
+    },
+    "selectService": "Choisissez votre service",
+    "serviceCategories": {
+      "maintenance": "Entretien & Liquides",
+      "repairs": "Réparations",
+      "diagnostics": "Diagnostics",
+      "checkups": "Check-ups",
+      "specialized": "Services Spécialisés"
+    },
+    "selectDate": "Choisissez une date",
+    "selectTime": "Choisissez un créneau horaire",
+    "availableSlots": "Créneaux disponibles",
+    "noSlots": "Aucun créneau disponible pour cette date",
+    "duration": "Durée",
+    "back": "← Retour",
+    "summary": "Récapitulatif de votre rendez-vous",
+    "serviceLabel": "Service :",
+    "dateLabel": "Date :",
+    "timeLabel": "Heure :",
+    "chassisTooltip": "Sur la carte grise (case E) ou tableau de bord.",
+    "chassisHelp": "17 caractères - Cliquez sur le \"i\" pour voir où le trouver",
+    "firstNamePlaceholder": "Votre prénom",
+    "lastNamePlaceholder": "Votre nom",
+    "emailPlaceholder": "votre.email@exemple.com",
+    "phonePlaceholder": "0X XX XX XX XX",
+    "chassisPlaceholder": "Ex: 1HGBH41JXMN109186",
+    "descriptionLabel": "Description du service ou réparation nécessaire *",
+    "customerInfo": {
+      "title": "Vos informations",
+      "firstName": "Prénom *",
+      "lastName": "Nom *",
+      "email": "Email *",
+      "phone": "Téléphone *",
+      "chassisNumber": "Numéro de châssis (VIN) *",
+      "description": "Description de votre besoin",
+      "descriptionPlaceholder": "Décrivez le problème rencontré ou le service souhaité...",
+      "errors": {
+        "firstNameRequired": "Le prénom est requis",
+        "lastNameRequired": "Le nom est requis",
+        "emailRequired": "L'email est requis",
+        "emailInvalid": "L'email n'est pas valide",
+        "phoneRequired": "Le téléphone est requis",
+        "chassisRequired": "Le numéro de châssis est requis",
+        "descriptionRequired": "La description du service est requise"
+      }
+    },
+    "buttons": {
+      "previous": "Précédent",
+      "next": "Suivant",
+      "confirm": "Confirmer le rendez-vous",
+      "confirming": "Confirmation..."
+    },
+    "calendar": {
+      "sundaysClosed": "Les dimanches sont fermés",
+      "minimumAdvance": "Réservation à partir de 3 jours à l'avance"
+    },
+    "timeSlot": {
+      "unavailable": "Indisponible",
+      "loadingAvailability": "Chargement des disponibilités...",
+      "openingHours": "Horaires d'ouverture :",
+      "mondayFriday": "Lun - Ven : 9h00 - 18h00",
+      "saturday": "Sam : 9h00 - 17h00",
+      "sunday": "Dim : Fermé",
+      "previousDay": "Jour précédent",
+      "nextDay": "Jour suivant"
+    },
+    "confirmation": {
+      "success": "Rendez-vous confirmé!",
+      "successMessage": "Un email de confirmation vous a été envoyé.",
+      "error": "Une erreur est survenue",
+      "errorMessage": "Nous n'avons pas pu confirmer votre rendez-vous.",
+      "details": "Détails de votre rendez-vous",
+      "bookingNumber": "Numéro de réservation",
+      "service": "Service",
+      "date": "Date",
+      "time": "Heure",
+      "contactInfo": "Nous vous contacterons prochainement pour confirmer les détails de votre rendez-vous.",
+      "phoneContact": "Pour toute question, contactez-nous au",
+      "retryMessage": "Veuillez réessayer ou contactez-nous directement.",
+      "backHome": "Retour à l'accueil",
+      "retry": "Réessayer"
+    }
+  },
+  "footer": {
+    "tagline": "Votre garage de confiance à Huizingen",
+    "contactTitle": "Contact",
+    "hoursTitle": "Horaires",
+    "weekdays": "Lun-Ven",
+    "weekdaysTime": "8h00 - 18h00",
+    "saturday": "Sam",
+    "saturdayTime": "9h00 - 13h00",
+    "rights": "Tous droits réservés"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "duration": {
+      "hour": "heure",
+      "hours": "heures",
+      "minutes": "minutes"
+    }
+  }
+}

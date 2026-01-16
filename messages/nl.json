@@ -1,0 +1,218 @@
+{
+  "nav": {
+    "about": "Over Ons",
+    "services": "Onze Diensten",
+    "contact": "Contact",
+    "appointment": "Afspraak Maken"
+  },
+  "home": {
+    "hero": {
+      "title": "Onderweg zorgen wij voor u en uw auto",
+      "subtitle": "Professioneel onderhoud, reparatie en diagnose van auto's",
+      "cta": "Afspraak Maken"
+    },
+    "info": {
+      "experience": "25+ jaar ervaring",
+      "satisfaction": "100% klanttevredenheid",
+      "services": "Volledige diensten"
+    },
+    "infoStrip": {
+      "call": {
+        "title": "BEL ONS OP 0473 64 79 47",
+        "subtitle": "Aarzel niet om ons te contacteren"
+      },
+      "appointment": {
+        "title": "MAAK EEN AFSPRAAK",
+        "subtitle": "Onderhoud? Reparatie? Waarschuwingslampje aan?"
+      },
+      "location": {
+        "title": "VIND ONS OP DE KAART",
+        "address": "Albert Vaucampslaan 28, 1654 Huizingen"
+      }
+    },
+    "about": {
+      "title": "Over Ons",
+      "subtitle": "Wie zijn wij?",
+      "text": "Bij Martins Automotive verdient elk voertuig nauwkeurige aandacht. Ons gekwalificeerde team zet zich in om u een betrouwbare, snelle en professionele service te bieden."
+    },
+    "servicesTitle": "Onze diensten",
+    "servicesSubtitle": "Wat doen wij?",
+    "showAllServices": "Toon alle diensten"
+  },
+    "services": {
+      "mon_entretien": "Onderhoud",
+      "mon_entretien_eco_controle": "Onderhoud + Milieucontrole",
+  
+      "adblue": "AdBlue",
+      "liquide_frein": "Remvloeistof",
+      "liquide_refroidissement": "Koelvloeistof",
+  
+      "freinage": "Remmen",
+      "amortisseur_suspension": "Schokdemper / ophanging",
+      "transmission_embrayage": "Transmissie / koppeling",
+      "echappement": "Uitlaat",
+      "demarrage_batterie": "Starten / accu",
+      "eclairage_ampoules": "Verlichting / lampen",
+  
+      "diagnostic_eco_controle": "Diagnose Milieucontrole",
+      "diagnostic_freinage": "Diagnose remmen",
+      "diagnostic_demarrage_charge": "Diagnose starten en laden",
+      "diagnostic_train_roulant": "Diagnose onderstel",
+      "diagnostics_electroniques": "Elektronische diagnose",
+  
+      "check_up_controle_technique": "Check Up technische keuring",
+      "check_up_hiver": "Check Up winter",
+      "check_up_printemps_ete": "Check Up lente / zomer",
+      "check_up_pret_partir": "Check Up rijklaar",
+  
+      "vitrage": "Beglazing",
+      "entretien_reparation_2_roues": "Onderhoud en reparatie 2 wielers"
+    },  
+  "contact": {
+    "title": "Contacteer Ons",
+    "subtitle": "Een vraag? Meer informatie nodig? Aarzel niet om ons te contacteren, wij antwoorden u zo snel mogelijk.",
+    "headline": "Heeft u een probleem? Wij zijn er om het op te lossen.",
+    "address": "Adres",
+    "phone": "Telefoon",
+    "hours": "Openingsuren",
+    "hoursDetail": {
+      "weekdays": "Maandag - Vrijdag",
+      "weekdaysTime": "8u00 - 18u00",
+      "saturday": "Zaterdag",
+      "saturdayTime": "9u00 - 13u00",
+      "sunday": "Zondag",
+      "sundayTime": "Gesloten"
+    },
+    "findUs": "Vind Ons",
+    "parkingAvailable": "Gratis parking beschikbaar",
+    "form": {
+      "title": "Contacteer Ons",
+      "name": "Naam",
+      "email": "E-mail",
+      "phone": "Telefoon",
+      "message": "Bericht",
+      "send": "Verzenden",
+      "sending": "Verzenden...",
+      "required": "Verplichte velden",
+      "success": "Bericht succesvol verzonden! We antwoorden u snel.",
+      "error": "Fout bij het verzenden",
+      "errorConnection": "Verbindingsfout. Probeer het opnieuw.",
+      "errors": {
+        "nameRequired": "Naam is verplicht",
+        "emailRequired": "E-mail is verplicht",
+        "emailInvalid": "Ongeldige e-mail",
+        "messageRequired": "Bericht is verplicht"
+      }
+    }
+  },
+  "appointment": {
+    "title": "Afspraak Maken",
+    "steps": {
+      "service": "Dienst",
+      "date": "Datum",
+      "time": "Tijd",
+      "info": "Informatie"
+    },
+    "selectService": "Kies uw dienst",
+    "serviceCategories": {
+      "maintenance": "Onderhoud & Vloeistoffen",
+      "repairs": "Reparaties",
+      "diagnostics": "Diagnoses",
+      "checkups": "Check-ups",
+      "specialized": "Gespecialiseerde Diensten"
+    },
+    "selectDate": "Kies een datum",
+    "selectTime": "Kies een tijdslot",
+    "availableSlots": "Beschikbare tijdsloten",
+    "noSlots": "Geen tijdsloten beschikbaar voor deze datum",
+    "duration": "Duur",
+    "back": "← Terug",
+    "summary": "Samenvatting van uw afspraak",
+    "serviceLabel": "Dienst:",
+    "dateLabel": "Datum:",
+    "timeLabel": "Tijd:",
+    "chassisTooltip": "Op het kentekenbewijs (vak E) of dashboard.",
+    "chassisHelp": "17 tekens - Klik op de \"i\" om te zien waar u het kunt vinden",
+    "firstNamePlaceholder": "Uw voornaam",
+    "lastNamePlaceholder": "Uw achternaam",
+    "emailPlaceholder": "uw.email@voorbeeld.com",
+    "phonePlaceholder": "0X XX XX XX XX",
+    "chassisPlaceholder": "Bijv: 1HGBH41JXMN109186",
+    "descriptionLabel": "Beschrijving van de dienst of benodigde reparatie *",
+    "customerInfo": {
+      "title": "Uw gegevens",
+      "firstName": "Voornaam *",
+      "lastName": "Achternaam *",
+      "email": "E-mail *",
+      "phone": "Telefoon *",
+      "chassisNumber": "Chassisnummer (VIN) *",
+      "description": "Beschrijving van uw behoefte",
+      "descriptionPlaceholder": "Beschrijf het probleem of de gewenste dienst...",
+      "errors": {
+        "firstNameRequired": "Voornaam is verplicht",
+        "lastNameRequired": "Achternaam is verplicht",
+        "emailRequired": "E-mail is verplicht",
+        "emailInvalid": "E-mail is niet geldig",
+        "phoneRequired": "Telefoon is verplicht",
+        "chassisRequired": "Chassisnummer is verplicht",
+        "descriptionRequired": "Beschrijving van de dienst is verplicht"
+      }
+    },
+    "buttons": {
+      "previous": "Vorige",
+      "next": "Volgende",
+      "confirm": "Afspraak bevestigen",
+      "confirming": "Bevestigen..."
+    },
+    "calendar": {
+      "sundaysClosed": "Zondagen zijn gesloten",
+      "minimumAdvance": "Reservering vanaf 3 dagen vooraf"
+    },
+    "timeSlot": {
+      "unavailable": "Niet beschikbaar",
+      "loadingAvailability": "Beschikbaarheid laden...",
+      "openingHours": "Openingsuren:",
+      "mondayFriday": "Maa - Vri: 9u00 - 18u00",
+      "saturday": "Zat: 9u00 - 17u00",
+      "sunday": "Zon: Gesloten",
+      "previousDay": "Vorige dag",
+      "nextDay": "Volgende dag"
+    },
+    "confirmation": {
+      "success": "Afspraak bevestigd!",
+      "successMessage": "Een bevestigingsmail is naar u verzonden.",
+      "error": "Er is een fout opgetreden",
+      "errorMessage": "We konden uw afspraak niet bevestigen.",
+      "details": "Details van uw afspraak",
+      "bookingNumber": "Reserveringsnummer",
+      "service": "Dienst",
+      "date": "Datum",
+      "time": "Tijd",
+      "contactInfo": "We nemen binnenkort contact met u op om de details van uw afspraak te bevestigen.",
+      "phoneContact": "Voor vragen kunt u ons bereiken op",
+      "retryMessage": "Probeer het opnieuw of contacteer ons rechtstreeks.",
+      "backHome": "Terug naar home",
+      "retry": "Opnieuw proberen"
+    }
+  },
+  "footer": {
+    "tagline": "Uw betrouwbare garage in Huizingen",
+    "contactTitle": "Contact",
+    "hoursTitle": "Openingsuren",
+    "weekdays": "Ma-Vr",
+    "weekdaysTime": "8u00 - 18u00",
+    "saturday": "Za",
+    "saturdayTime": "9u00 - 13u00",
+    "rights": "Alle rechten voorbehouden"
+  },
+  "common": {
+    "loading": "Laden...",
+    "error": "Fout",
+    "success": "Succes",
+    "duration": {
+      "hour": "uur",
+      "hours": "uur",
+      "minutes": "minuten"
+    }
+  }
+}
