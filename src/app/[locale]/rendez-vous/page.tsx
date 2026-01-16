@@ -2,11 +2,14 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useTranslations, useLocale } from "next-intl";
 import AppointmentStepper from "@/components/AppointmentStepper";
 import ServiceSelection from "@/components/ServiceSelection";
 import CalendarPicker from "@/components/CalendarPicker";
 import TimeSlotPicker from "@/components/TimeSlotPicker";
 import CustomerForm from "@/components/CustomerForm";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 interface AppointmentData {
   service: string;
@@ -23,6 +26,9 @@ interface AppointmentData {
 }
 
 export default function RendezVousPage() {
+  const router = useRouter();
+  const t = useTranslations();
+  const locale = useLocale();
   const [currentStep, setCurrentStep] = useState(1);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [appointmentData, setAppointmentData] = useState<AppointmentData>({
@@ -61,18 +67,71 @@ export default function RendezVousPage() {
     handleNextStep();
   };
 
+  const handleDateChange = (date: string) => {
+    setAppointmentData({ ...appointmentData, date, time: "" }); // Reset time when date changes
+  };
+
   const handleTimeSelect = (time: string) => {
     setAppointmentData({ ...appointmentData, time });
     handleNextStep();
   };
 
-  const handleCustomerInfoSubmit = (
+  const handleCustomerInfoSubmit = async (
     customerInfo: AppointmentData["customerInfo"]
   ) => {
     setAppointmentData({ ...appointmentData, customerInfo });
-    // TODO: Send to backend when ready
-    console.log("Appointment data:", { ...appointmentData, customerInfo });
-    alert("Rendez-vous confirmé! Nous vous contacterons bientôt.");
+
+    try {
+      // Import the API functions dynamically
+      const { createAppointment, convertToApiFormat, validateAppointmentData } = await import("@/utils/appointmentApi");
+
+      // Convert the appointment data to API format
+      const apiData = convertToApiFormat({
+        service: appointmentData.service,
+        date: appointmentData.date,
+        time: appointmentData.time,
+        customerInfo,
+        locale, // Add the locale to the API data
+      });
+
+      // Validate appointment data
+      const validationErrors = validateAppointmentData(apiData);
+
+      if (validationErrors.length > 0) {
+        // Redirect to confirmation page with validation error
+        const params = new URLSearchParams({
+          status: "error",
+          error: validationErrors.join(". "),
+        });
+
+        router.push(`/rendez-vous/confirmation?${params.toString()}`);
+        return;
+      }
+
+      // Send to backend
+      const response = await createAppointment(apiData);
+
+      // Redirect to confirmation page with success status
+      const params = new URLSearchParams({
+        status: "success",
+        service: appointmentData.service,
+        date: appointmentData.date,
+        time: appointmentData.time,
+        appointmentNumber: response.appointmentNumber || "",
+      });
+
+      router.push(`/rendez-vous/confirmation?${params.toString()}`);
+    } catch (error) {
+      console.error("Error creating appointment:", error);
+
+      // Redirect to confirmation page with error status
+      const params = new URLSearchParams({
+        status: "error",
+        error: error instanceof Error ? error.message : "Une erreur est survenue. Veuillez réessayer.",
+      });
+
+      router.push(`/rendez-vous/confirmation?${params.toString()}`);
+    }
   };
 
   return (
@@ -91,25 +150,26 @@ export default function RendezVousPage() {
           </Link>
 
           {/* Menu Desktop */}
-          <div className="hidden md:flex gap-6 text-white text-sm lg:text-base">
+          <div className="hidden md:flex gap-6 items-center text-white text-sm lg:text-base">
             <a
               href="./#about"
               className="hover:underline hover:text-yellow-400 transition"
             >
-              À propos
+              {t('nav.about')}
             </a>
             <a
               href="./#services"
               className="hover:underline hover:text-yellow-400 transition"
             >
-              Nos Services
+              {t('nav.services')}
             </a>
             <a
               href="./#contact"
               className="hover:underline hover:text-yellow-400 transition"
             >
-              Contact
+              {t('nav.contact')}
             </a>
+            <LanguageSwitcher />
           </div>
 
           {/* Bouton Hamburger Mobile */}
@@ -167,7 +227,7 @@ export default function RendezVousPage() {
               onClick={() => setMobileMenuOpen(false)}
               className="text-lg font-semibold uppercase tracking-wide hover:text-yellow-400 transition"
             >
-              À propos
+              {t('nav.about')}
             </a>
 
             <a
@@ -175,7 +235,7 @@ export default function RendezVousPage() {
               onClick={() => setMobileMenuOpen(false)}
               className="text-lg font-semibold uppercase tracking-wide hover:text-yellow-400 transition"
             >
-              Nos services
+              {t('nav.services')}
             </a>
 
             <a
@@ -183,10 +243,14 @@ export default function RendezVousPage() {
               onClick={() => setMobileMenuOpen(false)}
               className="text-lg font-semibold uppercase tracking-wide hover:text-yellow-400 transition"
             >
-              Contact
+              {t('nav.contact')}
             </a>
 
-            <div className="mt-8 pt-6 border-t border-gray-700">
+            <div className="mt-4 flex justify-center">
+              <LanguageSwitcher />
+            </div>
+
+            <div className="mt-4 pt-6 border-t border-gray-700">
               <a
                 href="tel:+32473647947"
                 className="block text-sm text-gray-300 hover:text-yellow-400 transition"
@@ -199,9 +263,9 @@ export default function RendezVousPage() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 md:px-20 py-8 sm:py-12">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 md:px-1 py-8 sm:py-8">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 text-center">
-          Prendre rendez-vous
+          {t('appointment.title')}
         </h1>
 
         <AppointmentStepper currentStep={currentStep} />
@@ -217,6 +281,7 @@ export default function RendezVousPage() {
           {currentStep === 2 && (
             <CalendarPicker
               selectedDate={appointmentData.date}
+              selectedService={appointmentData.service}
               onDateSelect={handleDateSelect}
               onBack={handlePreviousStep}
             />
@@ -225,7 +290,10 @@ export default function RendezVousPage() {
           {currentStep === 3 && (
             <TimeSlotPicker
               selectedTime={appointmentData.time}
+              selectedDate={appointmentData.date}
+              selectedService={appointmentData.service}
               onTimeSelect={handleTimeSelect}
+              onDateChange={handleDateChange}
               onBack={handlePreviousStep}
             />
           )}
