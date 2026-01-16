@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Martins Automotive - Website
 
-## Getting Started
+Site web professionnel pour le garage automobile Martins Automotive à Huizingen (Belgique).
 
-First, run the development server:
+## 🚗 À propos
 
+Site bilingue (Français/Néerlandais) avec système de prise de rendez-vous en ligne intégré à Google Calendar.
+
+**Caractéristiques principales:**
+- 9 services automobiles avec réservation en ligne
+- Intégration Google Calendar API
+- Système d'emails automatiques
+- Gestion de capacité par service
+- Interface bilingue FR/NL
+- Design responsive mobile-first
+
+## 🚀 Démarrage Rapide
+
+### Frontend
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+Ouvrir [http://localhost:3000](http://localhost:3000)
+
+### Backend
+```bash
+cd src/utils
+node index.js
+```
+Serveur démarre sur [http://localhost:8080](http://localhost:8080)
+
+## 📚 Documentation
+
+- **[CLAUDE.md](./CLAUDE.md)** - Guide rapide pour développeurs et Claude Code
+- **[PROJECT_DOCS.md](./PROJECT_DOCS.md)** - Documentation technique complète
+
+## 🛠️ Stack Technique
+
+- **Next.js** 15.5.2 (App Router)
+- **React** 19.1.0
+- **TypeScript** (mode strict)
+- **Tailwind CSS** 4
+- **next-intl** (i18n FR/NL)
+- **Google Calendar API** (backend Node.js)
+
+## ⚙️ Configuration
+
+Créer un fichier `.env` à la racine:
+```bash
+GOOGLE_CALENDAR_ID=your-calendar-id@group.calendar.google.com
+GOOGLE_CALENDAR_TIMEZONE=Europe/Brussels
+GOOGLE_SERVICE_ACCOUNT_KEY={"type":"service_account",...}
+GARAGE_EMAIL=your-email@martins-automotive.be
+PORT=8080
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📦 Scripts disponibles
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run dev      # Serveur de développement
+npm run build    # Build de production
+npm run start    # Serveur de production
+npm run lint     # Linter ESLint
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Structure du Projet
 
-## Learn More
+```
+martins-automotive/
+├── src/
+│   ├── app/[locale]/          # Pages multilingues
+│   ├── components/            # Composants React
+│   ├── i18n/                  # Configuration next-intl
+│   ├── middleware.ts          # Gestion des locales
+│   └── utils/
+│       ├── index.js           # Backend Node.js
+│       ├── appointmentApi.ts  # API client
+│       └── serviceDurations.ts # Configuration services
+├── messages/
+│   ├── fr.json                # Traductions FR
+│   └── nl.json                # Traductions NL
+├── CLAUDE.md                  # Guide développeur
+├── PROJECT_DOCS.md            # Documentation complète
+└── README.md                  # Ce fichier
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🌐 URLs
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Site web**: http://localhost:3000
+- **Backend API**: http://localhost:8080
+- **Page de réservation**: http://localhost:3000/fr/rendez-vous
+- **Page contact**: http://localhost:3000/fr/contact
+- **FAQ**: http://localhost:3000/fr/faq
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📞 Contact
 
-## Deploy on Vercel
+**Martins Automotive**
+- Localisation: Huizingen, Belgique
+- Téléphone: 0473 64 79 47
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📄 Licence
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Projet privé - Tous droits réservés
