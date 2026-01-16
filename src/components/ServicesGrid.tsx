@@ -1,24 +1,43 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
-const SERVICES = [
-  "Entretiens",
-  "Diagnostic",
-  "Contrôle technique",
-  "Pneus",
-  "Moteur",
-  "Carrosserie",
-  "Freins",
-  "Suspension",
-  "Climatisation",
+const SERVICE_KEYS = [
+  "mon_entretien",
+  "liquide_frein",
+  "liquide_refroidissement",
+  "adblue",
+  "freinage",
+  "eclairage_ampoules",
+  "demarrage_batterie",
+  "echappement",
+  "amortisseur_suspension",
+  "transmission_embrayage",
+  "diagnostic_eco_controle",
+  "check_up_controle_technique",
+  "mon_entretien_eco_controle",
+  "diagnostic_freinage",
+  "diagnostic_demarrage_charge",
+  "diagnostic_train_roulant",
+  "diagnostics_electroniques",
+  "check_up_pret_partir",
+  "check_up_hiver",
+  "check_up_printemps_ete",
+  "vitrage",
+  "entretien_reparation_2_roues",
 ];
 
-const EXTS = [ ".png",".webp", ".jpg", ".jpeg", ".svg"];
-const toSlug = (s: string) => s.toLowerCase().replace(/\s+/g, "_");
+const EXTS = [".png", ".webp", ".jpg", ".jpeg", ".svg"];
 
-function ServiceCard({ name }: { name: string }) {
-  const base = `/images/services/${toSlug(name)}`;
+function ServiceCard({
+  serviceKey,
+  name,
+}: {
+  serviceKey: string;
+  name: string;
+}) {
+  const base = `/images/services/${serviceKey}`;
   const [idx, setIdx] = useState(0);
 
   const src =
@@ -48,25 +67,44 @@ function ServiceCard({ name }: { name: string }) {
 }
 
 export default function ServicesGrid() {
+  const t = useTranslations();
   const [showAll, setShowAll] = useState(false);
-  const visibleServices = showAll ? SERVICES : SERVICES.slice(0, 6);
+  const visibleServices = showAll ? SERVICE_KEYS : SERVICE_KEYS.slice(0, 6);
 
   return (
-    <section id="services" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-20">
+    <section
+      id="services"
+      className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-20"
+    >
       {/* Titre section */}
-      <div className="text-center mb-8 sm:mb-10 md:mb-12">
-        <p className="text-gray-500 uppercase tracking-widest text-xs sm:text-sm mb-2">
-          Que faisons-nous ?
-        </p>
+      <div className=" mb-6 sm:mb-7 md:mb-7">
+        <div className="">
+          <div className="flex gap-1.5 mb-2">
+                    <Image
+                      src="/separator-carsblue.svg"
+                      alt="Localisation"
+                      className="h-2 sm:h-2 md:h-3 w-auto"
+                      width={500}
+                      height={500}
+                    />
+                    <p className="uppercase font-semibold tracking-widest text-xs sm:text-xs">
+                      {t("home.servicesSubtitle")}
+                    </p>
+                  </div>
+        </div>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wide text-gray-900">
-          Nos services
+          {t("home.servicesTitle")}
         </h2>
       </div>
 
       {/* Grille */}
       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-10">
-        {visibleServices.map((s) => (
-          <ServiceCard key={s} name={s} />
+        {visibleServices.map((serviceKey) => (
+          <ServiceCard
+            key={serviceKey}
+            serviceKey={serviceKey}
+            name={t(`services.${serviceKey}`)}
+          />
         ))}
       </div>
 
@@ -77,7 +115,7 @@ export default function ServicesGrid() {
             onClick={() => setShowAll(true)}
             className="uppercase text-xs sm:text-sm font-semibold tracking-wide underline hover:text-yellow-600 transition"
           >
-            Afficher tous les services
+            {t("home.showAllServices")}
           </button>
         </div>
       )}

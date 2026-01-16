@@ -3,8 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Header() {
+  const t = useTranslations();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -26,25 +29,26 @@ export default function Header() {
           </Link>
 
           {/* Menu Desktop */}
-          <div className="hidden md:flex gap-6 text-sm lg:text-base">
+          <div className="hidden md:flex gap-6 items-center text-sm lg:text-base">
             <a
               href="#about"
               className="hover:underline hover:text-yellow-400 transition"
             >
-              À propos
+              {t('nav.about')}
             </a>
             <a
               href="#services"
               className="hover:underline hover:text-yellow-400 transition"
             >
-              Nos Services
+              {t('nav.services')}
             </a>
             <a
               href="#contact"
               className="hover:underline hover:text-yellow-400 transition"
             >
-              Contact
+              {t('nav.contact')}
             </a>
+            <LanguageSwitcher />
           </div>
 
           {/* Bouton Hamburger Mobile */}
@@ -101,7 +105,7 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
               className="text-lg font-semibold uppercase tracking-wide hover:text-yellow-400 transition"
             >
-              À propos
+              {t('nav.about')}
             </a>
 
             <a
@@ -109,7 +113,7 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
               className="text-lg font-semibold uppercase tracking-wide hover:text-yellow-400 transition"
             >
-              Nos services
+              {t('nav.services')}
             </a>
 
             <a
@@ -117,10 +121,16 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
               className="text-lg font-semibold uppercase tracking-wide hover:text-yellow-400 transition"
             >
-              Contact
+              {t('nav.contact')}
             </a>
 
             <div className="mt-8 pt-6 border-t border-gray-700">
+              <div className="mb-4">
+                <p className="text-xs uppercase tracking-[0.2em] text-gray-400 mb-2">
+                  Langue / Taal
+                </p>
+                <LanguageSwitcher />
+              </div>
               <a
                 href="tel:+32473647947"
                 className="block text-sm text-gray-300 hover:text-yellow-400 transition"
@@ -132,7 +142,7 @@ export default function Header() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="mt-3 inline-flex items-center justify-center rounded-full border border-yellow-400 px-4 py-2 text-sm font-semibold uppercase tracking-wide hover:bg-yellow-400 hover:text-black transition"
               >
-                Prendre rendez-vous
+                {t('nav.appointment')}
               </a>
             </div>
           </div>
@@ -141,13 +151,13 @@ export default function Header() {
 
       <div className="h-full flex flex-col justify-center px-4 sm:px-6 md:px-20">
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 max-w-xl uppercase leading-tight">
-          Sur la route, on veille sur vous et votre voiture
+          {t('home.hero.title')}
         </h1>
         <Link
           href="/rendez-vous"
           className="btn-primary w-fit text-sm sm:text-base"
         >
-          Prendre rendez-vous
+          {t('home.hero.cta')}
         </Link>
       </div>
     </header>

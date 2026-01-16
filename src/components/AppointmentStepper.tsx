@@ -1,17 +1,20 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 interface AppointmentStepperProps {
   currentStep: number;
 }
 
-const STEPS = [
-  { number: 1, title: "Service", description: "Choisir le service" },
-  { number: 2, title: "Date", description: "Sélectionner la date" },
-  { number: 3, title: "Heure", description: "Choisir l'horaire" },
-  { number: 4, title: "Informations", description: "Vos coordonnées" },
-];
-
 export default function AppointmentStepper({ currentStep }: AppointmentStepperProps) {
+  const t = useTranslations();
+
+  const STEPS = [
+    { number: 1, titleKey: "appointment.steps.service", descriptionKey: "appointment.selectService" },
+    { number: 2, titleKey: "appointment.steps.date", descriptionKey: "appointment.selectDate" },
+    { number: 3, titleKey: "appointment.steps.time", descriptionKey: "appointment.selectTime" },
+    { number: 4, titleKey: "appointment.steps.info", descriptionKey: "appointment.customerInfo.title" },
+  ];
   return (
     <div className="flex items-center justify-center overflow-x-auto px-2">
       <div className="flex items-center space-x-2 sm:space-x-4 md:space-x-8">
@@ -43,7 +46,7 @@ export default function AppointmentStepper({ currentStep }: AppointmentStepperPr
                     ${step.number <= currentStep ? 'text-black' : 'text-gray-500'}
                   `}
                 >
-                  {step.title}
+                  {t(step.titleKey)}
                 </div>
                 <div
                   className={`
@@ -51,7 +54,7 @@ export default function AppointmentStepper({ currentStep }: AppointmentStepperPr
                     ${step.number <= currentStep ? 'text-gray-600' : 'text-gray-400'}
                   `}
                 >
-                  {step.description}
+                  {t(step.descriptionKey)}
                 </div>
               </div>
             </div>
